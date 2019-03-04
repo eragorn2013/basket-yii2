@@ -1,0 +1,192 @@
+@import url('/modules/basket/web/css/fonts.css');
+*
+{
+	padding: 0;
+	margin: 0;
+	font-family: 'OpenSans-Regular';
+}
+
+#basket-yii2-preview
+{	
+	position: fixed;	
+	padding: 0px;	
+	right: -290px;
+	padding: 10px 0px 10px 10px;
+	max-height: 100%;
+	top: 0px;
+	border-radius: 3px 0px 0px 3px;
+	z-index: 100000;
+	overflow-y: scroll;
+	box-sizing: border-box;
+	font-size: 14px;
+	.content 
+	{
+		display: flex;		
+		.item 
+		{
+			&.basket 
+			{
+				width: 30px;				
+				height: 35px;
+				align-self: flex-start;
+				box-shadow: 0px 0px 10px #333;
+				padding: 10px;
+				border-radius: 3px;
+				position: relative;
+				background: #fff;
+				a 
+				{
+					width: 30px;
+					height: 35px;
+					display: block;
+					background-image: url('/modules/basket/web/img/basket.png');
+					background-size: 90%;
+					background-position: center 0px;
+					background-repeat: no-repeat;
+					img 
+					{
+						width: 100%;
+						display: block;
+					}
+				}
+				span 
+				{
+					position: absolute;
+					bottom: 0px;
+					left: 0px;
+					width: 100%;
+					text-align: center;
+					font-size: 12px;
+				}
+			}
+			&.list 
+			{
+				box-shadow: 0px 0px 10px #333;
+				padding: 10px;
+				width: 240px;
+				margin-left: 10px;
+				background: #fff;	
+				border-radius: 3px;
+				.amount
+				{					
+					padding: 5px 0 15px 0;
+					.sum
+					{						
+						font-weight: bold;
+						text-transform: uppercase;
+						font-size: 18px;
+					}
+					.call-to-action 
+					{
+						margin-top: 20px;
+						a 
+						{
+							width: 100%;
+							box-sizing: border-box;
+							text-align: center;
+							text-decoration: none;
+							text-align: center;
+							display: block;
+							background: #92c409;
+							color: #fff;
+							padding: 7px 0;
+							border-radius: 3px;
+						}
+					}
+				}
+				h4
+				{
+					text-align: center;
+				}
+				.point 
+				{
+					border: 1px solid #d8d8d8;
+					padding: 10px;
+					margin: 0px 0 15px 0;
+					border-radius: 3px;
+					&:last-child
+					{
+						margin: 0;
+					}
+					.info 
+					{
+						display: flex;
+						.img 
+						{
+							width: 30px;
+							img 
+							{
+								width: 100%;
+								display: block;
+							}
+						}
+						.name 
+						{
+							width: 180px;
+							margin-left: 15px;
+							color: #333333;
+						}
+					}
+					.edit 
+					{
+						margin-top: 10px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						.count 
+						{
+							width: 75px;
+							display: flex;
+							align-items: center;
+							.arrow 
+							{
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								width: 20px;
+								height: 20px;
+								background: #e5e5e5;
+								&.left-count
+								{
+									border-radius: 3px;
+								}
+								&.right-count
+								{
+									border-radius: 3px;
+								}
+								img 
+								{
+									width: 10px;
+									cursor: pointer;
+									display: block;
+								}
+							}							
+							span 
+							{
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								width: 30px;
+								height: 20px;
+							}
+						}
+						.price
+						{
+							width: 100px;
+							text-align: center;
+							margin: 0px 20px;
+						}
+						.delete 
+						{
+							img 
+							{
+								width: 20px;
+								cursor: pointer;
+							}
+						}
+					}
+				}			
+			}
+		}
+	}
+}

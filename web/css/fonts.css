@@ -1,0 +1,40 @@
+@font-face
+{
+	font-family: 'OpenSans-Bold';
+	src: url('/modules/basket/web/fonts/OpenSans-Bold.eot');
+	src: url('/modules/basket/web/fonts/OpenSans-Bold.woff');	
+	src: url('/modules/basket/web/fonts/OpenSans-Bold.ttf');
+}
+
+@font-face
+{
+	font-family: 'OpenSans-Light';
+	src: url('/modules/basket/web/fonts/OpenSans-Light.eot');
+	src: url('/modules/basket/web/fonts/OpenSans-Light.woff');	
+	src: url('/modules/basket/web/fonts/OpenSans-Light.ttf');
+}
+
+@font-face
+{
+	font-family: 'OpenSans-Regular';
+	src: url('/modules/basket/web/fonts/OpenSans-Regular.eot');
+	src: url('/modules/basket/web/fonts/OpenSans-Regular.woff');	
+	src: url('/modules/basket/web/fonts/OpenSans-Regular.ttf');
+}
+
+@font-face
+{
+	font-family: 'OpenSansCondensed-Bold';
+	src: url('/modules/basket/web/fonts/OpenSansCondensed-Bold.eot');
+	src: url('/modules/basket/web/fonts/OpenSansCondensed-Bold.woff');	
+	src: url('/modules/basket/web/fonts/OpenSansCondensed-Bold.ttf');
+}
+
+@font-face
+{
+	font-family: 'OpenSansCondensed-Light';
+	src: url('/modules/basket/web/fonts/OpenSansCondensed-Light.eot');
+	src: url('/modules/basket/web/fonts/OpenSansCondensed-Light.woff');	
+	src: url('/modules/basket/web/fonts/OpenSansCondensed-Light.ttf');
+}
+

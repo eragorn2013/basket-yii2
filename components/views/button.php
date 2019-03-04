@@ -1,0 +1,1 @@
+<button rel='nofollow' class='action-in-basket <?= $class ?>' data-id="<?= $id ?>" data-img='<?= $img ?>'><?= $name ?></button>
