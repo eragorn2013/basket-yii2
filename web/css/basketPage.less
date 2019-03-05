@@ -27,25 +27,45 @@
     {
         width: 1300px;
         margin: 0 auto;
-        padding: 80px 0;
+        padding: 80px 0;        
         h1 
         {
             font-size: 30px;
             text-transform: uppercase;
             margin-bottom: 30px;
         }
+        a#ok-order 
+        {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 3px;
+            padding: 10px;
+            color: #155724;
+            text-align: center;
+            margin-bottom: 20px;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            text-decoration: none;
+            background-image: url('/modules/basket/web/img/close.png');
+            background-position: right center;
+            background-repeat: no-repeat;
+            background-size: 32px;
+        }
         .content 
         {
-            display: flex;      
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;      
             .item 
             {                
                 &.list 
                 {
                     box-shadow: 0px 0px 10px #333;
-                    padding: 20px;
-                    width: 100%;                 
+                    padding: 20px;                                     
                     background: #fff;   
                     border-radius: 3px;
+                    width: 70%;
                     .amount
                     {                   
                         padding: 5px 0 15px 0;
@@ -169,8 +189,512 @@
                         }
                     }           
                 }
+                &.form 
+                {
+                    width: 23%;
+                    box-shadow: 0px 0px 10px #333;
+                    padding: 20px;                                 
+                    background: #fff;   
+                    border-radius: 3px;
+                    align-self: flex-start;
+                    form 
+                    {
+                        p
+                        {
+                            text-align: center;
+                        }
+                        .form-group 
+                        {
+                            input, textarea 
+                            {
+                                display: block;
+                                width: 100%;
+                                box-sizing: border-box;
+                                padding: 10px;
+                                margin: 10px 0;
+                                border: 1px solid #cccccc;
+                                border-radius: 3px;
+                                outline: none;                                
+                            }
+                            textarea 
+                            {
+                                height: 100px;
+                            }
+                            .help-block
+                            {
+                                background: #f8d7da;
+                                text-align: center;
+                                font-size: 12px;
+                                
+                                border-radius: 3px;                                
+                                color: #721c24;
+                            }
+                        }
+                        button, a
+                        {
+                            display: block;
+                            width: 100%;
+                            margin: 0 auto;
+                            background: #92c409;
+                            padding: 7px 20px;
+                            text-align: center;
+                            color: #fff;
+                            text-transform: uppercase;
+                            border-radius: 3px;
+                            border: 0;
+                            cursor: pointer;
+                            outline: 0;
+                            text-decoration: none;
+                            box-sizing: border-box;
+                        } 
+                        a
+                        {
+                            background: #dc3545;
+                            margin-top: 10px;
+                            font-size: 12px;
+                        }
+                    }
+                }
             }
         }
+    }    
+}
+@media (max-width: 1320px)
+{
+    #basket-yii2-page
+    {    
+        font-size: 14px;
+        .container 
+        {
+            width: 1024px;            
+            padding: 60px 0;        
+            h1 
+            {
+                font-size: 28px;                
+                margin-bottom: 20px;
+            }
+            a#ok-order 
+            {               
+                border-radius: 3px;
+                padding: 10px;                
+                margin-bottom: 20px;               
+                width: 100%;              
+                background-size: 32px;
+            }
+            .content 
+            {                     
+                .item 
+                {                
+                    &.list 
+                    {                        
+                        padding: 20px;                
+                        width: 60%;
+                        .amount
+                        {                   
+                            padding: 5px 0 15px 0;
+                            .sum
+                            {           
+                                font-size: 18px;
+                            }
+                            .call-to-action 
+                            {
+                                margin-top: 20px;
+                                a 
+                                {                                                                 
+                                    padding: 7px 0;                                   
+                                }
+                            }
+                        }                       
+                        .point 
+                        {                            
+                            padding: 10px;
+                            margin: 0px 0 15px 0;                          
+                            .info 
+                            {                                
+                                .name 
+                                {
+                                    width: 220px;
+                                    margin-left: 15px;                                   
+                                }
+                            }
+                            .edit 
+                            {
+                                margin-top: 10px;                                
+                                .count 
+                                {
+                                    width: 75px;                                    
+                                    .arrow 
+                                    {                                       
+                                        width: 20px;
+                                        height: 20px;
+                                        
+                                        &.left-count
+                                        {
+                                            border-radius: 3px;
+                                        }
+                                        &.right-count
+                                        {
+                                            border-radius: 3px;
+                                        }
+                                        img 
+                                        {
+                                            width: 10px;                                            
+                                        }
+                                    }                           
+                                    span 
+                                    {                                       
+                                        width: 30px;
+                                        height: 20px;
+                                    }
+                                }
+                                .price
+                                {
+                                    width: 100px;                                    
+                                    margin: 0px 20px;
+                                }
+                                .delete 
+                                {
+                                    img 
+                                    {
+                                        width: 20px;                                      
+                                    }
+                                }
+                            }
+                        }           
+                    }
+                    &.form 
+                    {
+                        width: 30%;
+                        box-shadow: 0px 0px 10px #333;
+                        padding: 20px;    
+                        border-radius: 3px;                        
+                        form 
+                        {                            
+                            .form-group 
+                            {
+                                input, textarea 
+                                {                                   
+                                    padding: 10px;
+                                    margin: 10px 0;                                   
+                                    border-radius: 3px;                                                                 
+                                }
+                                textarea 
+                                {
+                                    height: 100px;
+                                }
+                                .help-block
+                                {                                    
+                                    font-size: 12px;                                      
+                                }
+                            }
+                            button, a
+                            {                                
+                                padding: 7px 20px;                                
+                                border-radius: 3px;                               
+                            } 
+                            a
+                            {                               
+                                margin-top: 10px;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }    
     }
-    
+}
+@media (max-width: 1044px)
+{
+    #basket-yii2-page
+    {    
+        font-size: 14px;
+        .container 
+        {
+            width: 768px;            
+            padding: 40px 0;        
+            h1 
+            {
+                font-size: 26px;                
+                margin-bottom: 15px;
+            }
+            a#ok-order 
+            {               
+                border-radius: 3px;
+                padding: 10px;                
+                margin-bottom: 20px;               
+                width: 100%;              
+                background-size: 32px;
+            }
+            .content 
+            {                     
+                .item 
+                {                
+                    &.list 
+                    {                        
+                        padding: 20px;                
+                        width: 100%;
+                        .amount
+                        {                   
+                            padding: 5px 0 15px 0;
+                            .sum
+                            {           
+                                font-size: 18px;
+                            }
+                            .call-to-action 
+                            {
+                                margin-top: 20px;
+                                a 
+                                {                                                                 
+                                    padding: 7px 0;                                   
+                                }
+                            }
+                        }                       
+                        .point 
+                        {                            
+                            padding: 10px;
+                            margin: 0px 0 15px 0;                          
+                            .info 
+                            {                                
+                                .name 
+                                {
+                                    width: 220px;
+                                    margin-left: 15px;                                   
+                                }
+                            }
+                            .edit 
+                            {
+                                margin-top: 10px;                                
+                                .count 
+                                {
+                                    width: 75px;                                    
+                                    .arrow 
+                                    {                                       
+                                        width: 20px;
+                                        height: 20px;
+                                        
+                                        &.left-count
+                                        {
+                                            border-radius: 3px;
+                                        }
+                                        &.right-count
+                                        {
+                                            border-radius: 3px;
+                                        }
+                                        img 
+                                        {
+                                            width: 10px;                                            
+                                        }
+                                    }                           
+                                    span 
+                                    {                                       
+                                        width: 30px;
+                                        height: 20px;
+                                    }
+                                }
+                                .price
+                                {
+                                    width: 100px;                                    
+                                    margin: 0px 20px;
+                                }
+                                .delete 
+                                {
+                                    img 
+                                    {
+                                        width: 20px;                                      
+                                    }
+                                }
+                            }
+                        }           
+                    }
+                    &.form 
+                    {
+                        width: 50%;
+                        box-shadow: 0px 0px 10px #333;
+                        padding: 20px;    
+                        border-radius: 3px;  
+                        margin: 20px auto 0;                      
+                        form 
+                        {                            
+                            .form-group 
+                            {
+                                input, textarea 
+                                {                                   
+                                    padding: 10px;
+                                    margin: 10px 0;                                   
+                                    border-radius: 3px;                                                                 
+                                }
+                                textarea 
+                                {
+                                    height: 100px;
+                                }
+                                .help-block
+                                {                                    
+                                    font-size: 12px;                                      
+                                }
+                            }
+                            button, a
+                            {                                
+                                padding: 7px 20px;                                
+                                border-radius: 3px;                               
+                            } 
+                            a
+                            {                               
+                                margin-top: 10px;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }    
+    }
+}
+@media (max-width: 788px)
+{
+    #basket-yii2-page
+    {    
+        font-size: 14px;
+        .container 
+        {
+            width: 95%;            
+            padding: 40px 0;        
+            h1 
+            {
+                font-size: 26px;                
+                margin-bottom: 15px;
+            }
+            a#ok-order 
+            {               
+                border-radius: 3px;
+                padding: 10px;                
+                margin-bottom: 20px;               
+                width: 100%;              
+                background-size: 32px;
+            }
+            .content 
+            {                     
+                .item 
+                {                
+                    &.list 
+                    {                        
+                        padding: 20px;                
+                        width: 100%;
+                        .amount
+                        {                   
+                            padding: 5px 0 15px 0;
+                            .sum
+                            {           
+                                font-size: 18px;
+                            }
+                            .call-to-action 
+                            {
+                                margin-top: 20px;
+                                a 
+                                {                                                                 
+                                    padding: 7px 0;                                   
+                                }
+                            }
+                        }                       
+                        .point 
+                        {                            
+                            padding: 10px;
+                            margin: 0px 0 15px 0; 
+                            flex-wrap: wrap;                         
+                            .info 
+                            {
+                                width: 100%;                                
+                                .name 
+                                {
+                                    width: 100%;
+                                    margin-left: 15px;                                   
+                                }
+                            }
+                            .edit 
+                            {
+                                margin-top: 10px;                                
+                                .count 
+                                {
+                                    width: 75px;                                    
+                                    .arrow 
+                                    {                                       
+                                        width: 20px;
+                                        height: 20px;
+                                        
+                                        &.left-count
+                                        {
+                                            border-radius: 3px;
+                                        }
+                                        &.right-count
+                                        {
+                                            border-radius: 3px;
+                                        }
+                                        img 
+                                        {
+                                            width: 10px;                                            
+                                        }
+                                    }                           
+                                    span 
+                                    {                                       
+                                        width: 30px;
+                                        height: 20px;
+                                    }
+                                }
+                                .price
+                                {
+                                    width: 100px;                                    
+                                    margin: 0px 20px;
+                                }
+                                .delete 
+                                {
+                                    img 
+                                    {
+                                        width: 20px;                                      
+                                    }
+                                }
+                            }
+                        }           
+                    }
+                    &.form 
+                    {
+                        width: 100%;
+                        box-shadow: 0px 0px 10px #333;
+                        padding: 20px;    
+                        border-radius: 3px;  
+                        margin: 20px auto 0;                      
+                        form 
+                        {                            
+                            .form-group 
+                            {
+                                input, textarea 
+                                {                                   
+                                    padding: 10px;
+                                    margin: 10px 0;                                   
+                                    border-radius: 3px;                                                                 
+                                }
+                                textarea 
+                                {
+                                    height: 100px;
+                                }
+                                .help-block
+                                {                                    
+                                    font-size: 12px;                                      
+                                }
+                            }
+                            button, a
+                            {                                
+                                padding: 7px 20px;                                
+                                border-radius: 3px;                               
+                            } 
+                            a
+                            {                               
+                                margin-top: 10px;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }    
+    }
 }

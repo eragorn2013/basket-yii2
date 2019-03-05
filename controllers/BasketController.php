@@ -3,16 +3,21 @@
 namespace app\modules\basket\controllers;
 use Yii;
 use yii\web\Controller;
+use yii\helpers\Url;
 use app\models\GoodsModel;
+use app\models\OrdersModel;
+use app\models\ProductsModel;
 use app\modules\basket\components\SimplePoint;
 
 class BasketController extends Controller 
 {
-	public function actionIndex()
+	public function actionIndex($message=null)
 	{
+		$orders=new OrdersModel;		
 		$basket=Yii::$app->session->get('basket');
 		$goods=[];
 		$amount=0;
+		$amountPrice=0;
 		$i=0;
 		if($basket)
 		{			
@@ -25,11 +30,31 @@ class BasketController extends Controller
 				$i++;		
 			}
 		}
-		
+		if($orders->load(Yii::$app->request->post()) && $orders->validate())
+		{
+			$orders->amount=$amountPrice;
+			$orders->save();
+			$idOrder=$orders->id;			
+			foreach($goods as $good)
+			{
+				$products=new ProductsModel();
+				$products->name=$good['good']->name;
+				$products->price=$good['good']->price;
+				$products->count=$good['count'];
+				$products->amount=$good['price'];
+				$products->good_id=$good['good']->id;
+				$products->order_id=$idOrder;
+				$products->save();
+			}			
+			Yii::$app->session->remove('basket');
+			$this->redirect([Url::toRoute(['/basket', 'message'=>'true'])]);
+		}		
 		return $this->render('index',[
 			'goods'=>$goods, 
 			'amountCount'=>$i,
-			'amountPrice'=>$amountPrice
+			'amountPrice'=>$amountPrice,
+			'orders'=>$orders,
+			'message'=>$message
 		]);
 	}
 	public function actionAddInBasket()
@@ -113,5 +138,10 @@ class BasketController extends Controller
 			}
 			$basket=array_values($basket);
 		}
+	}
+	public function actionDropBasket()
+	{
+		Yii::$app->session->remove('basket');
+		$this->redirect([Url::toRoute(['/basket'])]);
 	}
 }

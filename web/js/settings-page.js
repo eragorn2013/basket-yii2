@@ -1,6 +1,4 @@
-$(document).ready(function(){
-
-	
+$(document).ready(function(){	
 	$('body').on('click', '#basket-yii2-page .left-count', function(){
 		var num=Number($(this).next('#basket-yii2-page .count-good-basket').text());
 		if((num-1) < 1) return false;
@@ -51,4 +49,8 @@ $(document).ready(function(){
 		$('#basket-yii2-page #count-good-basket').text(count-1);		
 		$.post('/delete-good', {'id':id}, function(){});
 	});
+	$("#ordersmodel-phone").mask("+7(000)000-00-00", {
+	    placeholder: "Телефон",
+	    clearIfNotMatch: true
+  	});
 });

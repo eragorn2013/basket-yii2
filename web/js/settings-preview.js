@@ -16,8 +16,16 @@ $(document).ready(function(){
 		return false;
 	});
 
-	$('.action-in-basket').on('click', function(){		
+	$('.action-in-basket').on('click', function(){			
 		var id=$(this).attr('data-id');
+		$(this).text($(this).attr('data-name-added'));
+		$(this).css({
+			'background-color': $(this).attr('data-background-added'),
+			'color': $(this).attr('data-color-added'),
+		});
+		var positionButton=$(this).offset();
+		var positionBasket=$('#basket-yii2-preview #basket-yii2-open').offset();
+		var icon=$('<div id="icon-animate-basket">').css({'top':positionButton.top, 'left':positionButton.left});				
 		$.post('/add-in-basket', {'id':id}, function(data){
 			var d=JSON.parse(data);
 			if(d.error) 
@@ -25,12 +33,17 @@ $(document).ready(function(){
 				alert(d.message);
 				return false;
 			}
+			$('body').prepend(icon);
+			icon.animate({'top':positionBasket.top, 'left':positionBasket.left}, 200, function(){
+				icon.remove();
+			});
 			$('#basket-yii2-preview h4').remove();
 			$('#basket-yii2-preview .amount').before(d.point);
 			var amountPrice=Number($('#basket-yii2-preview #amountPrice').text());
 			$('#basket-yii2-preview #amountPrice').text(amountPrice+Number(d.price));
 			var count=Number($('#basket-yii2-preview #count-good-basket').text());
 			$('#basket-yii2-preview #count-good-basket').text(count+1);
+
 		});		
 	});
 	$('body').on('click', '#basket-yii2-preview .left-count', function(){

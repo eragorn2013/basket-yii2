@@ -13,10 +13,12 @@ class Bootstrap implements BootstrapInterface
     	/*Маршруты модуля*/
         Yii::$app->getUrlManager()->addRules([
 	        '/basket'=>'basket/basket/index',
+	        '/basket/<message:([true]+)>'=>'basket/basket/index',
 	        '/add-in-basket'=>'basket/basket/add-in-basket',
 	        '/left-count-basket'=>'basket/basket/left-count-basket',
 	        '/right-count-basket'=>'basket/basket/right-count-basket',
 	        '/delete-good'=>'basket/basket/delete-good',
+	        '/drop-basket'=>'basket/basket/drop-basket',
 	    ], false);
 
 	    /*Алиасы модуля*/
